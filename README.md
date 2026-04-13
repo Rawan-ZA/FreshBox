@@ -9,7 +9,7 @@ This is a modern Restaurant Mobile Application built using Flutter.
 The app provides users with a smooth experience to browse menus, explore meals, and place orders easily through a clean and user-friendly interface.
 The project is structured with clean architecture principles to ensure scalability, maintainability, and performance optimization.
 
-##✨ Features
+## ✨ Features
 -  🍔 Browse restaurant menu with categories
 -  🛒 Add and remove items from cart
 -  📦 Order management system
