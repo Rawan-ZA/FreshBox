@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gittest/payment/payment_methods.dart';
 import 'package:gittest/screens/payment/payment_methods.dart';
-// import 'package:gittest/screens/login.dart';
-// import 'package:gittest/screens/populer-food.dart';
-// import 'package:gittest/screens/product_details.dart';
 
 import 'package:gittest/widgets/boxWidget.dart';
 
