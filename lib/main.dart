@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:gittest/screens/login.dart';
-import 'package:gittest/screens/populer-food.dart';
-import 'package:gittest/screens/signup.dart';
-import 'screens/cart.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gittest/screens/Auth/signup.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:gittest/screens/onboarding/splash_screen.dart';
 
 
-void main() {
-  runApp(const MyApp());
+
+
+void main() async{
+  await GetStorage.init();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -15,11 +18,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      scrollBehavior: ScrollBehavior(),
-      title: 'Food Popular',
-      debugShowCheckedModeBanner: false,
-      home: PopulerFood(),
+    return ScreenUtilInit(
+      designSize: Size(375, 812),
+      child: MaterialApp(
+        scrollBehavior: ScrollBehavior(),
+        title: 'Food Popular',
+        debugShowCheckedModeBanner: false,
+          home: SplashScreen(),
+      ),
     );
   }
 }
