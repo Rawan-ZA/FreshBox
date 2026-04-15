@@ -25,6 +25,7 @@ class gridview_section extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
+      padding: EdgeInsetsGeometry.all(0),
       physics: scrollPhysics ?? ScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         childAspectRatio:   childAspectRatio,  //1.1 /2.1,

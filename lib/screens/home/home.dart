@@ -371,7 +371,7 @@ List<Map<String, String>> listviewContent = [
                 SizedBox(
                   height: 211.h,
                   child: ListView.builder(
-
+                    padding: EdgeInsetsGeometry.all(0),
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     itemCount: stackInfo.length,
@@ -498,12 +498,9 @@ List<Map<String, String>> listviewContent = [
                     ),
                   ],
                 ),
-                SizedBox(
-                    height: 350.h,
-                    child: gridview_section(imagesSrc: imagesSrc,
-                     scrollPhysics: NeverScrollableScrollPhysics(),
-                                      ),
-                  ),
+                gridview_section(imagesSrc: imagesSrc,
+                 scrollPhysics: NeverScrollableScrollPhysics(),
+                                  ),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -539,6 +536,7 @@ List<Map<String, String>> listviewContent = [
                   ],
                 ),
                 ListView.builder(
+                  padding: EdgeInsetsGeometry.all(0),
                   shrinkWrap: true,
                   itemCount: listviewContent.length,
                   physics: NeverScrollableScrollPhysics(),
@@ -628,6 +626,7 @@ List<Map<String, String>> listviewContent = [
                       ),
                     );
                   },),
+                SizedBox(height:60.h,),
               ],
             ),
           ),

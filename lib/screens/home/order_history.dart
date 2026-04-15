@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gittest/screens/home/widgets/rate.dart';
+import 'package:gittest/screens/home/widgets/rate_dialog.dart';
 import 'package:gittest/screens/payment/tracker_screen.dart';
 
 import '../../widgets/elevatedbtnwidget.dart';
@@ -139,6 +140,7 @@ class _OrderHistoryState extends State<OrderHistory>with SingleTickerProviderSta
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 25.w,vertical: 20.h),
                         child: ListView.builder(
+                          padding: EdgeInsetsGeometry.all(0),
                           itemBuilder: (context, index) {
                             return Container(
                               margin: EdgeInsets.symmetric(vertical: 15.h),
@@ -205,8 +207,6 @@ class _OrderHistoryState extends State<OrderHistory>with SingleTickerProviderSta
                                           ],
                                         ),
                                       )
-
-
                                     ],
                                   ),
                                   Row(
@@ -220,22 +220,7 @@ class _OrderHistoryState extends State<OrderHistory>with SingleTickerProviderSta
                                       Expanded(child: elevatedbtnwidget(text: "Rate", onPressed: () {
                                         showDialog(context: context,
                                           builder: (context) {
-                                            return Dialog(
-                                              alignment: AlignmentGeometry.center,
-                                              insetPadding: EdgeInsets.all(15).r,
-                                              elevation:0.5,
-                                              shape: RoundedRectangleBorder(
-                                                borderRadius: BorderRadius.circular(20).r,
-                                              ),
-                                              child: ClipRRect(
-                                                borderRadius: BorderRadius.circular(20).r,
-                                                child: SizedBox(
-                                                  width:333.w ,
-                                                  height: 358.h,
-                                                  child:
-                                                  Rate(),),
-                                              ),
-                                            );
+                                            return rate_dialog();
                                           },
                                         );
                                       },
@@ -271,6 +256,7 @@ class _OrderHistoryState extends State<OrderHistory>with SingleTickerProviderSta
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 ListView.builder(
+                                  padding: EdgeInsetsGeometry.all(0),
                                   itemBuilder: (context, index) {
                                     return Container(
                                       padding: EdgeInsets.symmetric(vertical: 15.h,horizontal: 12.w),
@@ -380,28 +366,6 @@ class _OrderHistoryState extends State<OrderHistory>with SingleTickerProviderSta
               ),
             ],
           ),
-          // bottomNavigationBar: BottomNavigationBar(
-          //   // fixedColor: Color(0xff121212),
-          //     selectedItemColor: Color(0xff121212),
-          //     iconSize: 26.sp,
-          //     currentIndex: index,
-          //     onTap: (value) {
-          //       setState(() {
-          //         index=value;
-          //         index == 1 ? isActive = true ? index==2 :  isActive = true
-          //             : isActive =false;
-          //         print(index);
-          //         print(isActive);
-          //
-          //       });
-          //     },
-          //     items:[
-          //       BottomNavigationBarItem(icon:Icon(Icons.home_filled,),label: "", backgroundColor: Color(0xffffffff),),
-          //       BottomNavigationBarItem(icon:SvgPicture.asset("assets/images/Order.svg",color: isActive ? Color(0xff121212) :Color(0xffD1CFD5),),label: "", backgroundColor: Color(0xffffffff),),
-          //       BottomNavigationBarItem(icon:SvgPicture.asset("assets/images/Heart.svg",
-          //         color: isActive ?Color(0xff121212) :Color(0xffD1CFD5) ,),label: "", backgroundColor: Color(0xffffffff),),
-          //       BottomNavigationBarItem(icon:Icon(Icons.notifications),label: "", backgroundColor: Color(0xffffffff),),
-          //     ]),
           floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
           floatingActionButton: FloatingActionButton(
             backgroundColor: Color(0xffEB6A58),
@@ -414,3 +378,4 @@ class _OrderHistoryState extends State<OrderHistory>with SingleTickerProviderSta
       );
   }
 }
+

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gittest/screens/Auth/login.dart';
 import 'package:gittest/screens/Auth/signup.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:gittest/screens/home/home.dart';
 import 'package:gittest/screens/onboarding/splash_screen.dart';
 
 
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         scrollBehavior: ScrollBehavior(),
         title: 'Food Popular',
         debugShowCheckedModeBanner: false,
-          home: Login(),
+          home: Home(),
       ),
     );
   }
