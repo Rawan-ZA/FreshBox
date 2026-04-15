@@ -76,7 +76,7 @@ class _ForgetpasswordState extends State<Forgetpassword> {
                   ),
                   SizedBox(
                     width: 296.w,
-                    height: 50.h,
+                    height: 70.h,
                     child:textform_field_widget(emailController: emailController,
                       errorHint: errorHint,value: "Enter your E-mail",
                       validator: (value) {
@@ -88,41 +88,7 @@ class _ForgetpasswordState extends State<Forgetpassword> {
                         return null;
                       }, outlainBorderRadius: 12.0,filled: true,
                       filledColor: Color(0xffF5F5F8),),
-                    // TextFormField(
-                    //   controller: emailController,
-                    //   decoration: InputDecoration(
-                    //     error: errorHint,
-                    //     contentPadding: EdgeInsets.symmetric(
-                    //       vertical: 20.r,
-                    //       horizontal: 20.r,
-                    //     ),
-                    //     filled: true,
-                    //     fillColor: Color(0xffF5F5F8),
-                    //     hintText: "Enter your E-mail",
-                    //     focusedBorder: OutlineInputBorder(
-                    //       borderRadius: BorderRadius.circular(10).r,
-                    //       borderSide: BorderSide.none,
-                    //     ),
-                    //     enabledBorder: OutlineInputBorder(
-                    //       borderRadius: BorderRadius.circular(10).r,
-                    //       borderSide: BorderSide.none,
-                    //     ),
-                    //     errorBorder: OutlineInputBorder(
-                    //       borderSide: BorderSide.none
-                    //     ),
-                    //     hoverColor: Color(0xffffffff),
-                    //   ),
-                    //   validator: (value) {
-                    //     if (value == null || value.isEmpty) {
-                    //       return "Email is empty";
-                    //     } else if (!value.contains("@")) {
-                    //       return "Email is not correct";
-                    //     }
-                    //     return null;
-                    //   },
-                    // ),
                   ),
-                  SizedBox(height: 5.h),
                   SizedBox(
                     height: 45.h,
                       width: 296.w,

@@ -35,6 +35,7 @@ class textform_field_widget extends StatelessWidget {
     return TextFormField(
       controller: emailController,
       decoration: InputDecoration(
+
         error: errorHint,
         contentPadding: EdgeInsets.symmetric(
           vertical: 20.r,
@@ -43,6 +44,10 @@ class textform_field_widget extends StatelessWidget {
         filled: filled,
         fillColor: filledColor,
         hintText: value,
+        helperText: " ",
+        errorStyle: TextStyle(
+          height:0.5.h
+        ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(outlainBorderRadius).r,
           borderSide: BorderSide.none,

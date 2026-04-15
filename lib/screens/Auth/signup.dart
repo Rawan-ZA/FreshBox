@@ -61,294 +61,224 @@ class _SignupState extends State<Signup> {
       designSize: Size(375, 812),
       child: Scaffold(
         backgroundColor: Color(0xfff5f5f8),
-        body: Padding(
-          padding: EdgeInsets.all(20).r,
-          child: SingleChildScrollView(
-            child: Column(
-              spacing: 20.h,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(height: 30.h),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10.r),
-                  child:
-                  Center(
-                    child: Image.asset("assets/images/mainLogo.png"),
-                    ),
-                  ),
-                Column(
-                  spacing: 5.w,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Let’s get Started",
-                      style: TextStyle(
-                        color: Color(0xff111a2c),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 24.sp,
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(20).r,
+            child: SingleChildScrollView(
+              child: Column(
+                spacing: 20.h,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: 30.h),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 10.r),
+                    child:
+                    Center(
+                      child: Image.asset("assets/images/mainLogo.png"),
                       ),
                     ),
-                    Text(
-                      "Create an account to continue!",
-                      style: TextStyle(
-                        color: Color(0xff6d6d6e),
-                        fontSize: 15.sp,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                ),
-                // SizedBox(height: 0),
-                Form(
-                  key: keyForm,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    spacing: 12.w,
+                  Column(
+                    spacing: 5.w,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Username ",
-                        textAlign: TextAlign.start,
-                        style: TextStyle(fontSize: 17.sp),
-                      ),
-                      SizedBox(
-                        width: 450.w,
-                        child: textform_field_widget(
-                            filledColor: Color(0xffffffff),
-                            filled: true,
-                            emailController: usernameController,
-                            errorHint: errorHint, validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return "username  is empty";
-                              } else if (value.length < 4) {
-                                return "Username is short";
-                              } else if (!RegExp(
-                                r'^[a-zA-Z0-9_]+$',
-                              ).hasMatch(value)) {
-                                return "Username must contain letters, numbers,and _ only";
-                              }
-                              return null;
-                            }, value: "Create your username ")
-                        // TextFormField(
-                        //   controller: ,
-                        //   decoration: InputDecoration(
-                        //     error: errorHint,
-                        //     contentPadding: EdgeInsets.symmetric(
-                        //       vertical: 15.r,
-                        //       horizontal: 20.r,
-                        //     ),
-                        //     filled: true,
-                        //     fillColor: Color(0xffffffff),
-                        //     hintText: ,
-                        //     focusedBorder: OutlineInputBorder(
-                        //       borderRadius: BorderRadius.circular(10).r,
-                        //       borderSide: BorderSide.none,
-                        //     ),
-                        //     enabledBorder: OutlineInputBorder(
-                        //       borderRadius: BorderRadius.circular(10).r,
-                        //       borderSide: BorderSide.none,
-                        //     ),
-                        //     hoverColor: Color(0xffffffff),
-                        //   ),
-                        //   validator:
-                        // ),
+                        "Let’s get Started",
+                        style: TextStyle(
+                          color: Color(0xff111a2c),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 24.sp,
+                        ),
                       ),
                       Text(
-                        "E-mail Id",
-                        textAlign: TextAlign.start,
-                        style: TextStyle(fontSize: 17.sp),
-                      ),
-                      SizedBox(
-                        width: 450.w,
-                        child: textform_field_widget(
-                            filledColor: Color(0xffffffff),
-                            filled: true,
-                            emailController: emailController,
-                            errorHint: errorHint, validator:  (value) {
-                              if (value == null || value.isEmpty) {
-                                return "Email is empty";
-                              } else if (!value.contains("@")) {
-                                return "Email is not correct";
-                              }
-                              return null;
-                            }, value: "Enter your e-mail")
-                        // TextFormField(
-                        //   controller: ,
-                        //   decoration: InputDecoration(
-                        //     error: errorHint,
-                        //     contentPadding: EdgeInsets.symmetric(
-                        //       vertical: 15.r,
-                        //       horizontal: 20.r,
-                        //     ),
-                        //     filled: true,
-                        //     fillColor: Color(0xffffffff),
-                        //     hintText: ,
-                        //     focusedBorder: OutlineInputBorder(
-                        //       borderRadius: BorderRadius.circular(10).r,
-                        //       borderSide: BorderSide.none,
-                        //     ),
-                        //     enabledBorder: OutlineInputBorder(
-                        //       borderRadius: BorderRadius.circular(10).r,
-                        //       borderSide: BorderSide.none,
-                        //     ),
-                        //     hoverColor: Color(0xffffffff),
-                        //   ),
-                        //   validator:
-                        // ),
-                      ),
-                      Text(
-                        "Password",
-                        textAlign: TextAlign.start,
-                        style: TextStyle(fontSize: 17.r),
-                      ),
-                      SizedBox(
-                        width: 450.w,
-                        child: textform_field_widget(emailController: passwordController,
-                            errorHint: errorHint,
-                          filledColor: Color(0xffffffff),
-                          filled: true,
-                          validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return "Password required";
-                              } else if (value.length < 8) {
-                                return "Password is weak";
-                              } else if (!RegExp(r'[A-Za-z]').hasMatch(value)) {
-                                return "Must contain uppercase and lowercase letter";
-                              } else {
-                                return null;
-                              }
-                            }, value:  "Create Your Password",obscureText: true,suffixIcon: Icon(
-                              Icons.visibility_off_outlined,
-                              color: Color(0xff121212),
-                              size: 26.sp,
-                            ),)
-                        // TextFormField(
-                        //   controller: ,
-                        //   obscureText: true,
-                        //   obscuringCharacter: '*',
-                        //   decoration: InputDecoration(
-                        //     error: errorHint,
-                        //     focusedErrorBorder: OutlineInputBorder(
-                        //       borderRadius: BorderRadius.circular(10).r,
-                        //       borderSide: BorderSide.none,
-                        //     ),
-                        //     suffixIcon:
-                        //     contentPadding: EdgeInsets.symmetric(
-                        //       vertical: 15.r,
-                        //       horizontal: 20.r,
-                        //     ),
-                        //     hintText:,
-                        //     filled: true,
-                        //     fillColor: Color(0xffffffff),
-                        //     enabledBorder: OutlineInputBorder(
-                        //       borderRadius: BorderRadius.circular(10).r,
-                        //       borderSide: BorderSide.none,
-                        //     ),
-                        //
-                        //   ),
-                        //   validator:
-                        // ),
+                        "Create an account to continue!",
+                        style: TextStyle(
+                          color: Color(0xff6d6d6e),
+                          fontSize: 15.sp,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ],
                   ),
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: SizedBox(
-                        height: 50.h,
-                        child: elevatedbtnwidget(
-                          text: "Signup",
-                          onPressed: () {
-                            if (keyForm.currentState!.validate()) {
-                              print(emailController.text);
-                              print(passwordController.text);
-                              print(usernameController.text);
-                              otpFunction();
-                          }
-
-                              }
-                        ),
-                      ),
-                    ),
-
-                  ],
-                ),
-                Center(
-                  child: RichText(
-                    text: TextSpan(
-                      style: TextStyle(
-                        fontWeight: FontWeight.w300,
-                        fontSize: 16,
-                        color: Color(0xff121212),
-                      ),
+                  Form(
+                    key: keyForm,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      spacing: 2.w,
                       children: [
-                        TextSpan(text: "Already have an account?  "),
-                        TextSpan(
-                          text: "Sign In",
-                          recognizer: TapGestureRecognizer()..onTap = (){
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => Login()),
-                            );
-                          },
-                          style: TextStyle(color: Color(0xffeb6a58)),
+                        Text(
+                          "Username ",
+                          textAlign: TextAlign.start,
+                          style: TextStyle(fontSize: 17.sp),
+                        ),
+                        SizedBox(
+                          width: 450.w,
+                          child: textform_field_widget(
+                              filledColor: Color(0xffffffff),
+                              filled: true,
+                              emailController: usernameController,
+                              errorHint: errorHint, validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return "username  is empty";
+                                } else if (value.length < 4) {
+                                  return "Username is short";
+                                } else if (!RegExp(
+                                  r'^[a-zA-Z0-9_]+$',
+                                ).hasMatch(value)) {
+                                  return "Username must contain letters, numbers,and _ only";
+                                }
+                                return null;
+                              }, value: "Create your username ")
+                        ),
+                        Text(
+                          "E-mail Id",
+                          textAlign: TextAlign.start,
+                          style: TextStyle(fontSize: 17.sp),
+                        ),
+                        SizedBox(
+                          width: 450.w,
+                          child: textform_field_widget(
+                              filledColor: Color(0xffffffff),
+                              filled: true,
+                              emailController: emailController,
+                              errorHint: errorHint, validator:  (value) {
+                                if (value == null || value.isEmpty) {
+                                  return "Email is empty";
+                                } else if (!value.contains("@")) {
+                                  return "Email is not correct";
+                                }
+                                return null;
+                              }, value: "Enter your e-mail")
+                    
+                        ),
+                        Text(
+                          "Password",
+                          textAlign: TextAlign.start,
+                          style: TextStyle(fontSize: 17.r),
+                        ),
+                        SizedBox(
+                          width: 450.w,
+                          child: textform_field_widget(emailController: passwordController,
+                              errorHint: errorHint,
+                            filledColor: Color(0xffffffff),
+                            filled: true,
+                            validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return "Password required";
+                                } else if (value.length < 8) {
+                                  return "Password is weak";
+                                } else if (!RegExp(r'[A-Za-z]').hasMatch(value)) {
+                                  return "Must contain uppercase and lowercase letter";
+                                } else {
+                                  return null;
+                                }
+                              }, value:  "Create Your Password",obscureText: true,suffixIcon: Icon(
+                                Icons.visibility_off_outlined,
+                                color: Color(0xff121212),
+                                size: 26.sp,
+                              ),)
                         ),
                       ],
                     ),
                   ),
-                ),
-
-                Container(
-                  width: 450.w,
-                  height: 50.h,
-                  decoration: BoxDecoration(
-                    color: Color(0xffffffff),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Row(
-                    spacing: 8.h,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  Row(
                     children: [
-                      SvgPicture.asset(
-                        "assets/images/google.svg",
-                        width: 20.w,
-                        height: 20.h,
+                      Expanded(
+                        child: SizedBox(
+                          height: 50.h,
+                          child: elevatedbtnwidget(
+                            text: "Signup",
+                            onPressed: () {
+                              if (keyForm.currentState!.validate()) {
+                                print(emailController.text);
+                                print(passwordController.text);
+                                print(usernameController.text);
+                                otpFunction();
+                            }
+          
+                                }
+                          ),
+                        ),
                       ),
-                      Text(
-                        "Continue With Google",
-                        style: TextStyle(fontSize: 14.r),
-                      ),
+          
                     ],
                   ),
-                ),
-                Container(
-                  width: 450.w,
-                  height: 50.h,
-                  decoration: BoxDecoration(
-                    color: Color(0xff4267b2),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Row(
-                    spacing: 8.h,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      // Icon(Icons.facebook_sharp,color: Color(0xffffffff),),
-                      SvgPicture.asset(
-                        "assets/images/facebook.svg",
-                        width: 20.w,
-                        height: 20.h,
+                  Center(
+                    child: RichText(
+                      text: TextSpan(
+                        style: TextStyle(
+                          fontWeight: FontWeight.w300,
+                          fontSize: 16,
+                          color: Color(0xff121212),
+                        ),
+                        children: [
+                          TextSpan(text: "Already have an account?  "),
+                          TextSpan(
+                            text: "Sign In",
+                            recognizer: TapGestureRecognizer()..onTap = (){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => Login()),
+                              );
+                            },
+                            style: TextStyle(color: Color(0xffeb6a58)),
+                          ),
+                        ],
                       ),
-                      Text(
-                        "Continue With Facebook",
-                        style: TextStyle(fontSize: 14.sp, color: Color(0xffffffff)),
-                      ),
-                    ],
+                    ),
                   ),
-                ),
-              ],
+          
+                  Container(
+                    width: 450.w,
+                    height: 50.h,
+                    decoration: BoxDecoration(
+                      color: Color(0xffffffff),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Row(
+                      spacing: 8.h,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          "assets/images/google.svg",
+                          width: 20.w,
+                          height: 20.h,
+                        ),
+                        Text(
+                          "Continue With Google",
+                          style: TextStyle(fontSize: 14.r),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: 450.w,
+                    height: 50.h,
+                    decoration: BoxDecoration(
+                      color: Color(0xff4267b2),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Row(
+                      spacing: 8.h,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        // Icon(Icons.facebook_sharp,color: Color(0xffffffff),),
+                        SvgPicture.asset(
+                          "assets/images/facebook.svg",
+                          width: 20.w,
+                          height: 20.h,
+                        ),
+                        Text(
+                          "Continue With Facebook",
+                          style: TextStyle(fontSize: 14.sp, color: Color(0xffffffff)),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -373,7 +303,7 @@ class _SignupState extends State<Signup> {
                  child:Padding(
                    padding: EdgeInsets.all(15).r,
                    child: Column(
-                     spacing: 20.h,
+                     spacing: 15.h,
                      crossAxisAlignment: CrossAxisAlignment.center,
                      children: [
                        Text("OTP Authentication",style: TextStyle(
@@ -412,7 +342,7 @@ class _SignupState extends State<Signup> {
                            )),
                          ]
                        )),
-                       SizedBox(height: 15.h,),
+
                        SizedBox(
                          height: 45.h,
                          width: 296.w,
@@ -446,7 +376,7 @@ class _SignupState extends State<Signup> {
       padding: EdgeInsets.all(2).r,
       child: SizedBox(
         width: 50.w,
-        height: 60.h,
+        height: 80.h,
         child: TextFormField(
           controller: otpControllers[i],
           focusNode: focusNodes[i],
@@ -467,6 +397,10 @@ class _SignupState extends State<Signup> {
             counterText: "",
             filled: true,
             error: errorHint,
+            helperText: " ",
+            errorStyle: TextStyle(
+                height:0.9.h
+            ),
             fillColor: Color(0xffffffff),
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),

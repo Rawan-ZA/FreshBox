@@ -27,8 +27,6 @@ class _LoginState extends State<Login> {
   void initState() {
     // TODO: implement initState
     emailController = TextEditingController();
-
-    super.initState();
     passwordController = TextEditingController();
     super.initState();
   }
@@ -90,7 +88,7 @@ class _LoginState extends State<Login> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   mainAxisAlignment: MainAxisAlignment.start,
-                  spacing: 12.w,
+                  spacing: 2.w,
                   children: [
                     Text(
                       "Username or E-mail",
@@ -114,7 +112,6 @@ class _LoginState extends State<Login> {
                         return null;
                       }, outlainBorderRadius: 12.0,),
                     ),
-
                     Text(
                       "Password",
                       textAlign: TextAlign.start,
@@ -122,7 +119,6 @@ class _LoginState extends State<Login> {
                     ),
                     SizedBox(
                       width: 450.w,
-
                       child:  textform_field_widget(emailController: passwordController,
                           errorHint: errorHint,filledColor: Color(0xffffffff),
                           filled: true,
@@ -140,43 +136,9 @@ class _LoginState extends State<Login> {
                             }
                           }, value: "Enter your password")
 
-                      // TextFormField(
-                      //   controller: ,
-                      //   obscureText: true,
-                      //   obscuringCharacter: '*',
-                      //   decoration: InputDecoration(
-                      //     error: errorHint,
-                      //     focusedErrorBorder: OutlineInputBorder(
-                      //       borderRadius: BorderRadius.circular(10),
-                      //       borderSide: BorderSide.none,
-                      //     ),
-                      //     suffixIcon: Icon(
-                      //       Icons.visibility_off_outlined,
-                      //       color: Color(0xff121212),
-                      //       size: 26.sp,
-                      //     ),
-                      //     contentPadding: EdgeInsets.symmetric(
-                      //       vertical: 20,
-                      //       horizontal: 20,
-                      //     ),
-                      //     hintText: "",
-                      //     filled: true,
-                      //     fillColor: Color(0xffffffff),
-                      //     enabledBorder: OutlineInputBorder(
-                      //       borderRadius: BorderRadius.circular(10).r,
-                      //       borderSide: BorderSide.none,
-                      //     ),
-                      //     focusedBorder: OutlineInputBorder(
-                      //       borderRadius: BorderRadius.circular(10).r,
-                      //       borderSide: BorderSide.none,
-                      //     ),
-                      //     hoverColor: Color(0xffffffff),
-                      //   ),
-                      //   validator:
-                      // ),
                     ),
-
-                   Container(
+                   Container(height: 30.h,
+                     margin: EdgeInsets.only(bottom: 1.h,top: 1.h),
                      alignment: Alignment.centerRight,
                      child: TextButton(
                        onPressed: () {

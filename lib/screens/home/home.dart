@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:gittest/screens/payment/cart.dart';
 import 'package:gittest/screens/home/favourite.dart';
 import 'package:gittest/screens/home/notify.dart';
 import 'package:gittest/screens/home/order_history.dart';
@@ -372,6 +371,7 @@ List<Map<String, String>> listviewContent = [
                 SizedBox(
                   height: 211.h,
                   child: ListView.builder(
+
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     itemCount: stackInfo.length,
@@ -499,14 +499,12 @@ List<Map<String, String>> listviewContent = [
                   ],
                 ),
                 SizedBox(
-                  height: 350.h,
-                  child: gridview_section(imagesSrc: imagesSrc,
-                   scrollPhysics: NeverScrollableScrollPhysics(),
-                    // scrollDirection: Axis.horizontal,
-                    // crossAxisCount: 1,
-                    // childAspectRatio :2.6 /1.4
-                                    ),
-                ),
+                    height: 350.h,
+                    child: gridview_section(imagesSrc: imagesSrc,
+                     scrollPhysics: NeverScrollableScrollPhysics(),
+                                      ),
+                  ),
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
